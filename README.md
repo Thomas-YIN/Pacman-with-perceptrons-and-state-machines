@@ -10,8 +10,8 @@ Pacman to eat all the foods in the map, as shown below.
 ## Different type of agents
 - NaiveAgent: The agent goes west until it cannot.
 - PSAgent: The agent moves according to a pre-defined production system.
-- [ECAgent](ecagent): The agent moves according to a perceptron trained using the error-correction method.
-- [SMAgent](smagent): The agent decides the next move by its impaired sensors along with its knowledge on the previous move.
+- [ECAgent](#ecagent): The agent moves according to a perceptron trained using the error-correction method.
+- [SMAgent](#smagent): The agent decides the next move by its impaired sensors along with its knowledge on the previous move.
 
 <a name="ecagent"/>
 <a name="smagent"/>
