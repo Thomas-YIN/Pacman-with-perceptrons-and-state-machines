@@ -11,19 +11,16 @@ Pacman to eat all the foods in the map, as shown below.
 - NaiveAgent: The agent goes west until it cannot.
 - PSAgent: The agent moves according to a pre-defined production system.
 - [ECAgent](#ecagent): The agent moves according to a perceptron trained using the error-correction method.
-- [SMAgent](#smagent): The agent decides the next move by its impaired sensors along with its knowledge on the previous move.
+- [SMAgent](#smagent): The agent is a state machine with impaired sensors and moves according to a production system based on previous and current senses, as well as the previous move.
 
-<a name="ecagent"/>
+### ECAgent
 
-## ECAgent (error-correction agent)
 The `ECAgent`'s action is determined by a single layer perceptron  trained on the four training sets named `north.csv`, `east.csv`, `south.csv`, and `west.csv`. Each file stores the environment states when moving north, east, south, and west. Each vector in the training set is in the form of $(s_1,...,s_8,d)$, where the first $8$ elements are the Pacman’s sensor readings, and $d$ is the label of this input, with $d = 1$ meaning a positive, and $0$ a negative example.
 
-<a name="smagent"/>
-
-## SMAgent (state machine agent)
+### SMAgent
 The `SMAgent` is sensory-impaired and can only received only 4 sensor inputs from the 4 directions: north, east, south, west. The agent receives sensor values from the `getPacmanImpairedSensor` function. The sensory input $(s_2, s_4, s_6, s_8)$ corresponds to the sensor values from the north, east, south, and west respectively. The `SMAgent` can remember the previous action `prevAction` and the previous sensory input `prevSense`. The agent moves according to a production system based on previous and current senses, as well as the previous move.
 
 ## How to run the game
-
+Run `python pacman.py --layout testMap --pacman NaiveAgent` to how the `NaiveAgent` acts. Note that the `--layout` parameter specifies the map, and the `--pacman` parameter specifies the agent. 
 
 
